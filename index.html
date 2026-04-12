@@ -1,0 +1,779 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VJMRTIM | Premium VJ Assets & Resolume Plugins Official</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030504;
+            color: #ffffff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        /* MULTI-LANGUAGE SYSTEM */
+        body.lang-mode-id .lang-en { display: none !important; }
+        body.lang-mode-en .lang-id { display: none !important; }
+        
+        .text-neon {
+            color: #10B981;
+            text-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+        }
+        .bg-neon-glow {
+            background-color: #10B981;
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.5);
+        }
+        .glass-panel {
+            background: rgba(20, 25, 22, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(16, 185, 129, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #10B981;
+            box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.3);
+            z-index: 10;
+        }
+        
+        /* Swiper Fixes */
+        .swiper-slide { height: auto; }
+        .swiper-pagination-bullet { background: rgba(255, 255, 255, 0.2); }
+        .swiper-pagination-bullet-active {
+            background: #10B981;
+            width: 30px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px #10B981;
+        }
+
+        /* Selling Animations */
+        @keyframes pulse-aggressive {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.8); transform: scale(1); }
+            50% { box-shadow: 0 0 0 20px rgba(16, 185, 129, 0); transform: scale(1.05); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); transform: scale(1); }
+        }
+        .btn-aggressive { animation: pulse-aggressive 2s infinite; }
+        
+        @keyframes float-complex {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(15px, -30px) rotate(4deg); }
+            66% { transform: translate(-15px, -15px) rotate(-2deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        .animate-float-complex { animation: float-complex 8s ease-in-out infinite; }
+
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 25s linear infinite;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #10B981, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        
+        /* Custom Accordion */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out;
+            opacity: 0;
+        }
+        .faq-item.active .faq-content {
+            max-height: 250px;
+            opacity: 1;
+            padding-top: 1rem;
+        }
+        .faq-item.active i.icon-plus {
+            transform: rotate(45deg);
+            color: #10B981;
+        }
+    </style>
+</head>
+<body class="bg-pattern lang-mode-id">
+
+    <!-- Sticky Announcement Bar -->
+    <div class="bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white py-2 overflow-hidden sticky top-0 z-[60] border-b border-white/20 shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+        <div class="whitespace-nowrap flex font-black text-[11px] md:text-xs uppercase tracking-[0.2em]">
+            <div class="animate-marquee shrink-0 lang-id">
+                ⚠️ HANYA UNTUK BEBERAPA ORANG! SISA 5 DISKON HARI INI ⚡ HARGA NORMAL RP 3.5 JUTA ➡️ CEK HARGA DISKON SEKARANG ⚡ AMANKAN ASETMU SEBELUM HARGA NAIK ⚠️ HANYA UNTUK BEBERAPA ORANG! SISA 5 DISKON HARI INI ⚡
+            </div>
+            <div class="animate-marquee shrink-0 lang-id">
+                ⚠️ HANYA UNTUK BEBERAPA ORANG! SISA 5 DISKON HARI INI ⚡ HARGA NORMAL RP 3.5 JUTA ➡️ CEK HARGA DISKON SEKARANG ⚡ AMANKAN ASETMU SEBELUM HARGA NAIK ⚠️ HANYA UNTUK BEBERAPA ORANG! SISA 5 DISKON HARI INI ⚡
+            </div>
+            <div class="animate-marquee shrink-0 lang-en">
+                ⚠️ HIGHLY LIMITED! ONLY 5 DISCOUNTS LEFT TODAY ⚡ REGULAR PRICE $230 ➡️ CHECK DISCOUNT NOW ⚡ SECURE YOUR ASSETS BEFORE PRICE GOES UP ⚠️ HIGHLY LIMITED! ONLY 5 DISCOUNTS LEFT TODAY ⚡
+            </div>
+            <div class="animate-marquee shrink-0 lang-en">
+                ⚠️ HIGHLY LIMITED! ONLY 5 DISCOUNTS LEFT TODAY ⚡ REGULAR PRICE $230 ➡️ CHECK DISCOUNT NOW ⚡ SECURE YOUR ASSETS BEFORE PRICE GOES UP ⚠️ HIGHLY LIMITED! ONLY 5 DISCOUNTS LEFT TODAY ⚡
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation & Header List -->
+    <nav class="fixed w-full z-50 glass-panel transition-all duration-300" id="navbar" style="top: 32px;">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-neon-glow rounded flex items-center justify-center font-black text-black italic shadow-lg">V</div>
+                <div class="text-xl md:text-2xl font-black tracking-tighter">
+                    VJMR<span class="text-neon">TIM</span>
+                </div>
+            </div>
+            
+            <!-- Header List (Navigation Links) -->
+            <div class="hidden lg:flex space-x-8 font-bold text-[11px] uppercase tracking-[0.2em]">
+                <a href="#belajar" class="hover:text-neon transition">
+                    <span class="lang-id">Buat Pemula</span><span class="lang-en">Beginners</span>
+                </a>
+                <a href="#katalog" class="hover:text-neon transition">
+                    <span class="lang-id">Katalog Diskon</span><span class="lang-en">Catalog</span>
+                </a>
+                <a href="#qna" class="hover:text-neon transition">QnA</a>
+            </div>
+
+            <!-- Right Actions: Language Switcher & CTA -->
+            <div class="flex items-center gap-4 md:gap-6">
+                <!-- Language Switcher -->
+                <div class="flex items-center bg-black/50 rounded-full border border-white/10 p-1 text-[10px] md:text-xs font-black tracking-widest">
+                    <button onclick="switchLang('id')" id="btn-lang-id" class="px-3 py-1.5 rounded-full text-black bg-green-500 transition-all">ID</button>
+                    <button onclick="switchLang('en')" id="btn-lang-en" class="px-3 py-1.5 rounded-full text-gray-500 hover:text-white transition-all">EN</button>
+                </div>
+                <!-- Nav CTA -->
+                <a href="#katalog" class="hidden sm:block bg-neon-glow text-black px-6 py-2.5 rounded font-black transition transform hover:scale-105 text-[10px] md:text-xs uppercase shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+                    <span class="lang-id">Klaim Diskon</span><span class="lang-en">Claim Deal</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-4 md:px-6 flex items-center min-h-[95vh] border-b border-white/5">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 flex justify-center items-center opacity-30">
+            <div class="w-[300px] h-[300px] md:w-[700px] md:h-[700px] bg-green-500 rounded-full blur-[150px] animate-float-complex"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto text-center relative z-10 w-full" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full border border-green-500/50 text-green-400 text-[10px] md:text-xs font-black mb-6 tracking-[0.3em] uppercase bg-green-500/10 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </span>
+                Resolume Arena 7.23++ Ready
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-[6rem] font-black mb-6 leading-[1] tracking-tighter uppercase italic drop-shadow-2xl">
+                <span class="lang-id">KOLEKSI <span class="gradient-text">3 TERABYTE</span> <br>VISUAL TERLENGKAP.</span>
+                <span class="lang-en">THE ULTIMATE <span class="gradient-text">3 TERABYTE</span> <br>VISUAL COLLECTION.</span>
+            </h1>
+            
+            <p class="text-gray-300 text-lg md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed font-medium">
+                <span class="lang-id">Gak perlu capek cari aset! Kebutuhan <strong class="text-white">konser, wedding, live music, sampai tren Nailong</strong> semua ada di sini. Gudang senjata VJ Profesional dengan ribuan aset DXV3 & Plugin eksklusif siap tempur.</span>
+                <span class="lang-en">Stop hunting for assets! <strong class="text-white">Concerts, weddings, live music, and trending visuals</strong> are all here. The ultimate VJ arsenal with thousands of DXV3 assets & exclusive plugins ready for action.</span>
+            </p>
+
+            <!-- SCARCITY BOX (URGENSI TINGGI) -->
+            <div class="bg-red-600/10 border border-red-500/50 p-4 md:p-6 rounded-2xl max-w-2xl mx-auto mb-10 backdrop-blur-md relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-20 h-20 bg-red-500/20 blur-xl"></div>
+                <p class="text-white font-medium text-sm md:text-base leading-relaxed lang-id">
+                    ⚠️ <span class="text-red-400 font-black tracking-widest">PERHATIAN:</span> Penawaran ini <strong>HANYA UNTUK BEBERAPA ORANG!</strong> <br>
+                    Saat ini <strong class="text-yellow-400 text-lg">SISA 5 DISKON UNTUK HARI INI.</strong><br>
+                    <span class="inline-block mt-2 text-gray-400 text-sm">Harga Normal: <span class="line-through decoration-red-500 decoration-2 font-bold">Rp 3.500.000</span></span> <br>
+                    <span class="text-neon text-lg md:text-xl font-black mt-1 inline-block uppercase tracking-tight">Harga Diskon? Langsung Klik Tombol Di Bawah!</span>
+                </p>
+                <p class="text-white font-medium text-sm md:text-base leading-relaxed lang-en">
+                    ⚠️ <span class="text-red-400 font-black tracking-widest">ATTENTION:</span> This offer is <strong>HIGHLY LIMITED!</strong> <br>
+                    Currently <strong class="text-yellow-400 text-lg">ONLY 5 DISCOUNTS LEFT TODAY.</strong><br>
+                    <span class="inline-block mt-2 text-gray-400 text-sm">Regular Price: <span class="line-through decoration-red-500 decoration-2 font-bold">$230</span></span> <br>
+                    <span class="text-neon text-lg md:text-xl font-black mt-1 inline-block uppercase tracking-tight">Discount Price? Click the Button Below!</span>
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+                <a href="#katalog" class="w-full sm:w-auto bg-neon-glow text-black px-10 md:px-14 py-5 rounded-2xl font-black text-xl md:text-2xl transition-all btn-aggressive uppercase italic flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(16,185,129,0.4)]">
+                    <i data-lucide="zap" class="w-6 h-6"></i> 
+                    <span class="lang-id">CEK HARGA DISKON SEKARANG</span>
+                    <span class="lang-en">CHECK DISCOUNT PRICE NOW</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGGRESSIVE SECTION: LAGI BELAJAR RESOLUME? -->
+    <section id="belajar" class="py-24 md:py-32 px-4 md:px-6 bg-gradient-to-b from-[#030504] to-[#0A1A10] border-b border-green-500/20 relative overflow-hidden">
+        <i data-lucide="triangle-alert" class="absolute -right-20 top-10 w-96 h-96 text-green-500/5 -z-10 animate-pulse"></i>
+        <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter italic mb-8 leading-none">
+                <span class="lang-id">LAGI BELAJAR RESOLUME <br><span class="text-neon">TAPI BINGUNG?</span></span>
+                <span class="lang-en">LEARNING RESOLUME <br><span class="text-neon">BUT FEELING STUCK?</span></span>
+            </h2>
+            
+            <div class="glass-panel p-8 md:p-12 rounded-[2.5rem] border-red-500/20 text-left md:text-center relative shadow-2xl">
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-red-600 text-white font-black px-6 py-2 rounded-full uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(220,38,38,0.6)]">
+                    <span class="lang-id">FAKTA LAPANGAN</span><span class="lang-en">THE HARD TRUTH</span>
+                </div>
+                
+                <p class="text-xl md:text-3xl font-bold leading-relaxed text-gray-200 mb-8 lang-id">
+                    Belajar Resolume bakal kerasa <span class="text-red-500 underline decoration-wavy">sangat lama dan membosankan</span> kalau kamu gak punya aset visual yang keren buat di-mix!
+                </p>
+                <p class="text-xl md:text-3xl font-bold leading-relaxed text-gray-200 mb-8 lang-en">
+                    Learning Resolume feels <span class="text-red-500 underline decoration-wavy">incredibly slow and boring</span> if you don't have cool visual assets to mix and play with!
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                    <div class="bg-black/50 p-6 rounded-2xl border border-white/5 flex gap-4 items-start card-hover">
+                        <i data-lucide="x-octagon" class="text-red-500 w-8 h-8 shrink-0 mt-1"></i>
+                        <div class="lang-id">
+                            <h4 class="font-black text-lg mb-2 text-white">Pakai Aset Kosongan?</h4>
+                            <p class="text-sm text-gray-400">Preset kosong, efek standar bawaan Resolume bikin visual kamu kelihatan kayak VJ amatir tahun 2010.</p>
+                        </div>
+                        <div class="lang-en">
+                            <h4 class="font-black text-lg mb-2 text-white">Using Default Assets?</h4>
+                            <p class="text-sm text-gray-400">Empty presets and stock effects will make your visuals look like an amateur VJ from 2010.</p>
+                        </div>
+                    </div>
+                    <div class="bg-black/50 p-6 rounded-2xl border border-white/5 flex gap-4 items-start card-hover">
+                        <i data-lucide="alert-triangle" class="text-red-500 w-8 h-8 shrink-0 mt-1"></i>
+                        <div class="lang-id">
+                            <h4 class="font-black text-lg mb-2 text-white">Pakai MP4 Gratisan?</h4>
+                            <p class="text-sm text-gray-400">Laptop bakal langsung ngos-ngosan, lag parah, bahkan *force close* pas lagi manggung karena format gak standar.</p>
+                        </div>
+                        <div class="lang-en">
+                            <h4 class="font-black text-lg mb-2 text-white">Using Free MP4s?</h4>
+                            <p class="text-sm text-gray-400">Your laptop will struggle, lag heavily, or even crash during a gig because the format isn't optimized.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-8 border-t border-white/10 text-center">
+                    <p class="text-lg md:text-xl font-black text-green-400 mb-6 uppercase tracking-wide">
+                        <span class="lang-id">Solusinya? Pakai Bundle Visual dari Kami.</span>
+                        <span class="lang-en">The Solution? Use Our Premium Visual Bundles.</span>
+                    </p>
+                    <p class="text-gray-300 font-medium lang-id">Tinggal *drag & drop*, kamu bisa langsung eksperimen komposisi dan kelihatan kayak VJ profesional secara instan. Proses belajar kamu bakal **10x lebih cepat!**</p>
+                    <p class="text-gray-300 font-medium lang-en">Just *drag & drop*, instantly experiment with compositions, and look like a pro VJ. Your learning curve will be **10x faster!**</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: KENAPA HARUS BELI -->
+    <section id="why" class="py-24 px-4 md:px-6 bg-[#030504] border-b border-white/5 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter mb-4">
+                    <span class="lang-id">Kenapa <span class="text-neon">Wajib Beli?</span></span>
+                    <span class="lang-en">Why <span class="text-neon">Choose Us?</span></span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="glass-panel p-8 rounded-3xl card-hover bg-gradient-to-br from-green-500/5 to-transparent" data-aos="flip-left" data-aos-delay="100">
+                    <div class="w-16 h-16 rounded-2xl bg-green-500/20 flex items-center justify-center mb-6 border border-green-500/40">
+                        <i data-lucide="cpu" class="w-8 h-8 text-green-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-black uppercase tracking-tight mb-3">Native DXV3</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed lang-id">Format paling ramah GPU. Dijamin *ultra-smooth* meskipun ditarik puluhan layer sekaligus di komposisi Resolume kamu.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed lang-en">Most GPU-friendly format. Guaranteed ultra-smooth playback even when pulling dozens of layers simultaneously.</p>
+                </div>
+                
+                <div class="glass-panel p-8 rounded-3xl card-hover bg-gradient-to-br from-green-500/5 to-transparent" data-aos="flip-left" data-aos-delay="200">
+                    <div class="w-16 h-16 rounded-2xl bg-green-500/20 flex items-center justify-center mb-6 border border-green-500/40">
+                        <i data-lucide="monitor-play" class="w-8 h-8 text-green-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-black uppercase tracking-tight mb-3">Arena 7.23++</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed lang-id">Tidak ada isu lawas. Semua plugin dan komposisi kami digaransi berjalan lancar di versi Resolume modern.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed lang-en">No outdated issues. All plugins and compositions are guaranteed to run smoothly on modern Resolume versions.</p>
+                </div>
+                
+                <div class="glass-panel p-8 rounded-3xl card-hover bg-gradient-to-br from-green-500/5 to-transparent" data-aos="flip-left" data-aos-delay="300">
+                    <div class="w-16 h-16 rounded-2xl bg-green-500/20 flex items-center justify-center mb-6 border border-green-500/40">
+                        <i data-lucide="zap" class="w-8 h-8 text-green-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-black uppercase tracking-tight mb-3">
+                        <span class="lang-id">Siap Manggung</span><span class="lang-en">Gig Ready</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed lang-id">Bukan sekedar file mentah. Aset kami sudah siap *drag & drop*, langsung pakai untuk ngonten atau manggung malam ini juga.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed lang-en">Not just raw files. Our assets are drag & drop ready, instantly usable for your gig tonight.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: KATALOG INTERAKTIF (SLIDER) -->
+    <section id="katalog" class="py-24 md:py-32 px-4 md:px-0 relative overflow-hidden bg-black/40 border-b border-white/5">
+        <div class="max-w-[90rem] mx-auto px-0 md:px-6">
+            
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 px-4 md:px-0" data-aos="fade-right">
+                <div>
+                    <h2 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none mb-4">
+                        <span class="lang-id">Pilih <span class="text-neon drop-shadow-[0_0_15px_rgba(16,185,129,0.8)]">Senjatamu</span></span>
+                        <span class="lang-en">Choose Your <span class="text-neon drop-shadow-[0_0_15px_rgba(16,185,129,0.8)]">Weapon</span></span>
+                    </h2>
+                    <div class="flex items-center gap-3 bg-white/10 w-fit px-4 py-2 rounded-full text-white font-bold uppercase tracking-[0.2em] text-xs">
+                        <i data-lucide="mouse-pointer-click" class="w-5 h-5 text-green-500 animate-bounce"></i> 
+                        <span class="lang-id">Geser Untuk Memilih</span><span class="lang-en">Swipe to browse</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swiper Slider Container -->
+            <div class="swiper catalog-swiper pb-20 px-4 md:px-0" data-aos="zoom-in-up">
+                <div class="swiper-wrapper">
+                    
+                    <!-- 1. Visual 3 Tera -->
+                    <div class="swiper-slide">
+                        <div class="glass-panel rounded-3xl flex flex-col h-full border-green-500/50 shadow-[0_0_40px_rgba(16,185,129,0.2)] relative overflow-hidden group">
+                            <div class="absolute top-0 right-0 bg-red-600 text-white text-xs font-black px-6 py-2 rounded-bl-xl uppercase tracking-widest z-10 animate-pulse shadow-lg">🔥 SISA 5 DISKON</div>
+                            <div class="p-8 flex flex-col h-full">
+                                <div class="w-20 h-20 mb-6 bg-green-500/20 rounded-2xl flex justify-center items-center border border-green-500/50 shrink-0 shadow-[0_0_20px_rgba(16,185,129,0.3)]"><i data-lucide="hard-drive" class="text-green-500 w-10 h-10"></i></div>
+                                <h3 class="text-3xl font-black uppercase italic tracking-tight mb-3 leading-tight text-white group-hover:text-neon transition">Visual Library 3 Tera</h3>
+                                <p class="text-gray-300 text-sm mb-8 flex-grow leading-relaxed lang-id">Paket paling badak! Visual Konser, Wedding, Live Music, EDM, Nailong. Gak perlu pusing cari aset di luaran lagi.</p>
+                                <p class="text-gray-300 text-sm mb-8 flex-grow leading-relaxed lang-en">The ultimate pack! Concerts, Wedding, Live Music, EDM. Stop looking elsewhere, everything is here.</p>
+                                <div class="mt-auto pt-6 border-t border-white/20">
+                                    <div class="text-[11px] text-gray-500 uppercase font-black tracking-widest mb-1 lang-id"><span class="line-through decoration-red-500">Rp 3.500.000</span> Harga Promo:</div>
+                                    <div class="text-[11px] text-gray-500 uppercase font-black tracking-widest mb-1 lang-en"><span class="line-through decoration-red-500">$230</span> Promo Price:</div>
+                                    <div class="text-4xl font-black text-white mb-6 tracking-tighter">Rp 79rb</div>
+                                    <a href="http://lynk.id/colorize/82g814o7q716" target="_blank" class="w-full bg-neon-glow text-black py-4 rounded-xl font-black uppercase text-center block btn-aggressive shadow-lg text-sm tracking-widest">
+                                        <span class="lang-id">Amankan Diskon</span><span class="lang-en">Secure Deal</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Bundle Plugin -->
+                    <div class="swiper-slide">
+                        <div class="glass-panel rounded-3xl flex flex-col h-full border-white/10 group card-hover bg-gradient-to-b from-white/[0.02] to-transparent">
+                            <div class="p-8 flex flex-col h-full">
+                                <div class="w-16 h-16 mb-6 bg-white/5 rounded-2xl flex justify-center items-center shrink-0 border border-white/10"><i data-lucide="blocks" class="text-gray-300 w-8 h-8"></i></div>
+                                <h3 class="text-2xl font-black uppercase italic tracking-tight mb-3 leading-tight group-hover:text-neon transition">Bundle Plugin Resolume</h3>
+                                <p class="text-gray-400 text-sm mb-8 flex-grow leading-relaxed lang-id">Koleksi efek khusus bikin visual makin gila. Tersedia pilihan beli satuan atau borongan hemat.</p>
+                                <p class="text-gray-400 text-sm mb-8 flex-grow leading-relaxed lang-en">Special effects collection to make your visuals pop. Available individually or in bundles.</p>
+                                <div class="pt-6 border-t border-white/10 mt-auto">
+                                    <a href="http://lynk.id/colorize/pBLqJzN" target="_blank" class="w-full bg-white text-black py-4 rounded-xl font-black uppercase text-center block hover:bg-green-500 transition text-xs tracking-widest shadow-xl">
+                                        Checkout Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Remote Resolume -->
+                    <div class="swiper-slide">
+                        <div class="glass-panel rounded-3xl flex flex-col h-full border-white/10 group card-hover">
+                            <div class="p-8 flex flex-col h-full">
+                                <div class="w-16 h-16 mb-6 bg-white/5 rounded-2xl flex justify-center items-center shrink-0"><i data-lucide="smartphone" class="text-gray-300 w-8 h-8"></i></div>
+                                <h3 class="text-2xl font-black uppercase italic tracking-tight mb-3 leading-tight group-hover:text-neon transition">Remote Resolume</h3>
+                                <p class="text-gray-400 text-sm mb-8 flex-grow leading-relaxed lang-id">Kontrol Arena via HP/Tablet. Workflow lebih lincah dan terlihat sangat pro di mata klien.</p>
+                                <p class="text-gray-400 text-sm mb-8 flex-grow leading-relaxed lang-en">Control Arena via Phone/Tablet. Faster workflow and look professional to your clients.</p>
+                                <div class="pt-6 border-t border-white/10 mt-auto">
+                                    <a href="http://lynk.id/colorize/ow13p9g4e2nk" target="_blank" class="w-full bg-white text-black py-4 rounded-xl font-black uppercase text-center block hover:bg-green-500 transition text-xs tracking-widest">
+                                        <span class="lang-id">Beli Sekarang</span><span class="lang-en">Buy Now</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Slice Refiner -->
+                    <div class="swiper-slide">
+                        <div class="glass-panel rounded-3xl flex flex-col h-full border-white/10 group card-hover">
+                            <div class="p-8 flex flex-col h-full">
+                                <div class="w-16 h-16 mb-6 bg-white/5 rounded-2xl flex justify-center items-center shrink-0"><i data-lucide="scissors" class="text-gray-300 w-8 h-8"></i></div>
+                                <h3 class="text-2xl font-black uppercase italic tracking-tight mb-3 leading-tight group-hover:text-neon transition">Plugin Slice Refiner</h3>
+                                <p class="text-gray-400 text-sm mb-8 flex-grow leading-relaxed lang-id">Mapping LED jadi lebih detail, tajam, dan memiliki tingkat presisi tinggi anti bocor.</p>
+                                <p class="text-gray-400 text-sm mb-8 flex-grow leading-relaxed lang-en">LED Mapping becomes highly detailed, sharp, and precise without light leaks.</p>
+                                <div class="pt-6 border-t border-white/10 mt-auto">
+                                    <a href="http://lynk.id/colorize/g40kl4jlmm07" target="_blank" class="w-full bg-white text-black py-4 rounded-xl font-black uppercase text-center block hover:bg-green-500 transition text-xs tracking-widest">
+                                        Checkout Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Slice Strobe FX -->
+                    <div class="swiper-slide">
+                        <div class="glass-panel rounded-3xl flex flex-col h-full border-white/10 group card-hover">
+                            <div class="p-8 flex flex-col h-full">
+                                <div class="w-16 h-16 mb-6 bg-white/5 rounded-2xl flex justify-center items-center shrink-0"><i data-lucide="zap" class="text-gray-300 w-8 h-8"></i></div>
+                                <h3 class="text-2xl font-black uppercase italic tracking-tight mb-3 leading-tight group-hover:text-neon transition">Slice Strobe FX</h3>
+                                <p class="text-gray-400 text-sm mb-8 flex-grow leading-relaxed lang-id">Bikin efek kedip (strobe) epic per-slice LED. Sangat wajib dimiliki untuk event EDM.</p>
+                                <p class="text-gray-400 text-sm mb-8 flex-grow leading-relaxed lang-en">Create epic per-slice strobe effects. An absolute must-have for EDM events.</p>
+                                <div class="pt-6 border-t border-white/10 mt-auto">
+                                    <a href="http://lynk.id/colorize/gwr8wm04nnyq" target="_blank" class="w-full bg-white text-black py-4 rounded-xl font-black uppercase text-center block hover:bg-green-500 transition text-xs tracking-widest">
+                                        <span class="lang-id">Beli Sekarang</span><span class="lang-en">Buy Now</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Pusher FX -->
+                    <div class="swiper-slide">
+                        <div class="glass-panel rounded-3xl flex flex-col h-full border-white/10 group card-hover">
+                            <div class="p-8 flex flex-col h-full">
+                                <div class="w-16 h-16 mb-6 bg-white/5 rounded-2xl flex justify-center items-center shrink-0"><i data-lucide="chevrons-up" class="text-gray-300 w-8 h-8"></i></div>
+                                <h3 class="text-2xl font-black uppercase italic tracking-tight mb-3 leading-tight group-hover:text-neon transition">Pusher FX</h3>
+                                <p class="text-gray-400 text-sm mb-8 flex-grow leading-relaxed lang-id">Plugin generator impact andalan yang bikin visual langsung 'nonjok' tepat pas drop lagu.</p>
+                                <p class="text-gray-400 text-sm mb-8 flex-grow leading-relaxed lang-en">The ultimate impact generator plugin that makes visuals punch right at the beat drop.</p>
+                                <div class="pt-6 border-t border-white/10 mt-auto">
+                                    <a href="https://lynk.id/colorize/ww1n91zknn9o" target="_blank" class="w-full bg-white text-black py-4 rounded-xl font-black uppercase text-center block hover:bg-green-500 transition text-xs tracking-widest">
+                                        Checkout Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Thumbnail Resolume -->
+                    <div class="swiper-slide">
+                        <div class="glass-panel rounded-3xl flex flex-col h-full border-white/10 group card-hover">
+                            <div class="p-8 flex flex-col h-full">
+                                <div class="w-16 h-16 mb-6 bg-white/5 rounded-2xl flex justify-center items-center shrink-0"><i data-lucide="layout-grid" class="text-gray-300 w-8 h-8"></i></div>
+                                <h3 class="text-2xl font-black uppercase italic tracking-tight mb-3 leading-tight group-hover:text-neon transition">Thumbnail Resolume</h3>
+                                <p class="text-gray-400 text-sm mb-8 flex-grow leading-relaxed lang-id">Rapikan deck komposisi Anda agar tertata, dan gak bingung cari visual pas lagi live.</p>
+                                <p class="text-gray-400 text-sm mb-8 flex-grow leading-relaxed lang-en">Organize your composition deck so you never get lost finding visuals during a live set.</p>
+                                <div class="pt-6 border-t border-white/10 mt-auto">
+                                    <a href="http://lynk.id/colorize/47jenn06nkzy" target="_blank" class="w-full bg-white text-black py-4 rounded-xl font-black uppercase text-center block hover:bg-green-500 transition text-xs tracking-widest">
+                                        <span class="lang-id">Beli Sekarang</span><span class="lang-en">Buy Now</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination Dots -->
+                <div class="swiper-pagination mt-10 relative bottom-0"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: QnA PRODUK -->
+    <section id="qna" class="py-24 px-4 md:px-6 bg-[#030504]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-12 text-center" data-aos="fade-up">
+                <span class="lang-id">Seputar <span class="text-neon">Produk Ini</span></span>
+                <span class="lang-en">Product <span class="text-neon">F.A.Q</span></span>
+            </h2>
+            
+            <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                
+                <div class="faq-item glass-panel rounded-2xl border border-white/10 bg-black/40">
+                    <button class="w-full p-6 text-left font-black uppercase tracking-wide flex justify-between items-center text-sm md:text-base outline-none" onclick="toggleAccordion(this)">
+                        <span class="lang-id">Bang, ini file-nya dikirim lewat apa?</span>
+                        <span class="lang-en">How will the files be delivered?</span>
+                        <i data-lucide="plus" class="icon-plus transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 text-gray-400 text-sm leading-relaxed border-t border-white/5">
+                        <div class="pb-6 lang-id">Akses link download Google Drive eksklusif akan <strong>langsung otomatis masuk ke Email</strong> kamu segera setelah pembayaran berhasil dikonfirmasi oleh sistem Lynk.id. Gak pake nunggu admin!</div>
+                        <div class="pb-6 lang-en">Exclusive Google Drive download links will be <strong>automatically sent to your Email</strong> instantly after payment is confirmed by the Lynk.id system. No waiting for admins!</div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel rounded-2xl border border-white/10 bg-black/40">
+                    <button class="w-full p-6 text-left font-black uppercase tracking-wide flex justify-between items-center text-sm md:text-base outline-none" onclick="toggleAccordion(this)">
+                        <span class="lang-id">Format videonya apa? Bakal berat gak di laptop?</span>
+                        <span class="lang-en">What's the video format? Will it lag my laptop?</span>
+                        <i data-lucide="plus" class="icon-plus transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 text-gray-400 text-sm leading-relaxed border-t border-white/5">
+                        <div class="pb-6 lang-id">Semua visual kami di-render menggunakan <strong>format DXV3</strong>. Ini adalah codec video resmi buatan Resolume yang didesain agar sangat ringan di-decode oleh GPU. Jauh lebih enteng dibanding memutar video MP4 biasa.</div>
+                        <div class="pb-6 lang-en">All our visuals are rendered in <strong>DXV3 format</strong>. This is Resolume's official video codec designed to be extremely lightweight for your GPU. It's much smoother than regular MP4 videos.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel rounded-2xl border border-white/10 bg-black/40">
+                    <button class="w-full p-6 text-left font-black uppercase tracking-wide flex justify-between items-center text-sm md:text-base outline-none" onclick="toggleAccordion(this)">
+                        <span class="lang-id">Plugin-nya support Resolume versi berapa?</span>
+                        <span class="lang-en">What Resolume version is supported?</span>
+                        <i data-lucide="plus" class="icon-plus transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 text-gray-400 text-sm leading-relaxed border-t border-white/5">
+                        <div class="pb-6 lang-id">Plugin dan komposisi kami dijamin support penuh untuk <strong>Resolume Arena versi 7.23 ke atas</strong>.</div>
+                        <div class="pb-6 lang-en">Our plugins and compositions are guaranteed to fully support <strong>Resolume Arena version 7.23 and above</strong>.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel rounded-2xl border border-white/10 bg-green-500/5 border-green-500/30">
+                    <button class="w-full p-6 text-left font-black uppercase tracking-wide flex justify-between items-center text-sm md:text-base outline-none text-green-400" onclick="toggleAccordion(this)">
+                        <span class="lang-id">Apakah ada batasan lisensi untuk perusahaan / komersial?</span>
+                        <span class="lang-en">Are there any license limits for commercial use?</span>
+                        <i data-lucide="plus" class="icon-plus transition-transform duration-300 shrink-0"></i>
+                    </button>
+                    <div class="faq-content px-6 text-gray-300 text-sm leading-relaxed border-t border-green-500/20">
+                        <div class="pb-6 lang-id"><strong>BEBAS DIPAKAI!</strong> Kami paham banyak pembeli kami adalah perusahaan event, vendor LED, dan VJ *freelancer*. Oleh karena itu, kami membebaskan penggunaan aset ini untuk *project* komersial apapun. Silakan pakai sebanyak-banyaknya!</div>
+                        <div class="pb-6 lang-en"><strong>USE FREELY!</strong> We understand many of our buyers are event companies, LED vendors, and freelance VJs. Therefore, we allow unlimited use of these assets for any commercial projects. Use them as much as you want!</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: QnA BELAJAR RESOLUME & FREEBIES -->
+    <section class="py-24 px-4 md:px-6 bg-gradient-to-t from-[#030504] to-[#0A1A10] border-t border-green-500/20">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
+            
+            <!-- QnA Belajar -->
+            <div class="w-full lg:w-2/3" data-aos="fade-right">
+                <div class="inline-block bg-white/10 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
+                    <span class="lang-id">Pojok Edukasi Pemula</span><span class="lang-en">Beginner's Corner</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-10">
+                    <span class="lang-id">Tanya Jawab <br><span class="text-neon">Belajar Resolume</span></span>
+                    <span class="lang-en">Resolume Learning <br><span class="text-neon">Q & A</span></span>
+                </h2>
+                
+                <div class="space-y-6">
+                    <div class="bg-black/50 p-6 rounded-2xl border border-white/10">
+                        <h4 class="text-lg font-black text-green-400 uppercase tracking-tight mb-3 flex items-start gap-2">
+                            <i data-lucide="laptop-2" class="shrink-0 mt-1 w-5 h-5"></i>
+                            <span class="lang-id">Spesifikasi Minimal Buat Resolume?</span><span class="lang-en">Minimum Specs for Resolume?</span>
+                        </h4>
+                        <p class="text-sm text-gray-300 leading-relaxed lang-id">Secara resmi website Resolume minta spek tinggi: Intel i7 / Ryzen 5, RAM 16GB, dan VGA Dedicated 4GB (seperti RTX/GTX) plus SSD NVMe. <br><br><strong class="text-white italic">Eits, tapi tenang aja!</strong> Kalau kamu baru fase belajar di kamar, spek menengah ke bawah (seperti Core i5 lawas / RAM 8GB) masih bisa jalan kok, asalkan kamu memutar visual dengan format DXV3 buatan kami, bukan format MP4 yang berat!</p>
+                        <p class="text-sm text-gray-300 leading-relaxed lang-en">Officially, Resolume demands high specs: Intel i7 / Ryzen 5, 16GB RAM, and a 4GB Dedicated GPU. <br><br><strong class="text-white italic">But don't worry!</strong> If you're just learning in your bedroom, mid-to-low specs (like an older Core i5 / 8GB RAM) can still run it smoothly, provided you use our DXV3 format visuals instead of heavy MP4s!</p>
+                    </div>
+
+                    <div class="bg-black/50 p-6 rounded-2xl border border-white/10">
+                        <h4 class="text-lg font-black text-green-400 uppercase tracking-tight mb-3 flex items-start gap-2">
+                            <i data-lucide="youtube" class="shrink-0 mt-1 w-5 h-5"></i>
+                            <span class="lang-id">Ada banyak tutorial di internet?</span><span class="lang-en">Are there many tutorials online?</span>
+                        </h4>
+                        <p class="text-sm text-gray-300 leading-relaxed lang-id">Banyak banget bro! YouTube adalah guru terbaikmu. Kamu cukup ketik "Resolume Arena Tutorial Basic", ratusan video dari VJ luar maupun lokal siap nuntun kamu dari nol. Komunitasnya juga aktif.</p>
+                        <p class="text-sm text-gray-300 leading-relaxed lang-en">Tons! YouTube is your best teacher. Just type "Resolume Arena Tutorial Basic", and hundreds of videos from global and local VJs will guide you from scratch.</p>
+                    </div>
+
+                    <div class="bg-black/50 p-6 rounded-2xl border border-white/10">
+                        <h4 class="text-lg font-black text-green-400 uppercase tracking-tight mb-3 flex items-start gap-2">
+                            <i data-lucide="sliders-horizontal" class="shrink-0 mt-1 w-5 h-5"></i>
+                            <span class="lang-id">Perlu beli alat MIDI Controller gak?</span><span class="lang-en">Do I need to buy a MIDI Controller?</span>
+                        </h4>
+                        <p class="text-sm text-gray-300 leading-relaxed lang-id">Gak harus kok! Gak perlu pusing beli alat mahal dulu. Nanti kamu bisa belajar nge-mapping tombol (*Shortcut*) langsung pakai keyboard laptop kamu aja buat nyalain visual/efek. Sangat hemat budget buat pemula!</p>
+                        <p class="text-sm text-gray-300 leading-relaxed lang-en">Not at all! No need to stress over expensive gear right away. You can learn to map shortcuts directly on your laptop keyboard to trigger visuals. Very budget-friendly!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Freebies Panel -->
+            <div class="w-full lg:w-1/3" data-aos="fade-left">
+                <div class="glass-panel p-8 rounded-3xl border-green-500/30 text-center sticky top-32 shadow-[0_0_30px_rgba(16,185,129,0.15)]">
+                    <h3 class="text-2xl font-black uppercase italic tracking-tight mb-4 lang-id">Butuh Software <br>Buat Belajar?</h3>
+                    <h3 class="text-2xl font-black uppercase italic tracking-tight mb-4 lang-en">Need Software <br>to Learn?</h3>
+                    <p class="text-sm text-gray-400 mb-8 lang-id">Kami sediakan installer Resolume 7.23.2 untuk tujuan edukasi, plus aset kalibrasi gratis.</p>
+                    <p class="text-sm text-gray-400 mb-8 lang-en">We provide the Resolume 7.23.2 installer for educational purposes, plus free calibration assets.</p>
+                    
+                    <div class="space-y-4">
+                        <a href="#" class="w-full flex items-center justify-center gap-3 bg-zinc-800 hover:bg-zinc-700 text-white p-4 rounded-xl font-bold text-xs uppercase transition border border-white/10">
+                            <i data-lucide="download" class="w-5 h-5 text-green-400"></i> Get Resolume 7.23.2
+                        </a>
+                        
+                        <div class="relative mt-8 pt-8 border-t border-white/10">
+                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[9px] font-black px-4 py-1 rounded-full uppercase tracking-widest shadow-lg">FREE TESTER</div>
+                            <i data-lucide="grid-3x3" class="w-12 h-12 text-green-500 mx-auto mb-3"></i>
+                            <h4 class="font-black uppercase text-lg mb-1">Test Pattern</h4>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-4 lang-id">Wajib punya buat kalibrasi LED</p>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mb-4 lang-en">Must-have for LED calibration</p>
+                            <a href="https://tr.ee/ndoo0mF5k8" target="_blank" class="w-full inline-block bg-white text-black hover:bg-green-500 p-4 rounded-xl font-black text-xs uppercase transition shadow-lg">
+                                <span class="lang-id">Download Gratis</span><span class="lang-en">Download Free</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FINAL CTA SALES -->
+    <section class="py-24 md:py-32 px-4 md:px-6 relative text-center bg-[#030504] border-t border-red-500/20 overflow-hidden">
+        <!-- Aggressive Glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-green-500/10 blur-[150px] -z-10 rounded-full pointer-events-none"></div>
+        
+        <!-- THE GIANT 😎 EMOTICON (Swagger Effect) -->
+        <div class="absolute -top-10 md:-top-20 -right-10 md:right-32 text-[150px] md:text-[250px] z-0 animate-float-complex opacity-30 drop-shadow-[0_0_50px_rgba(16,185,129,0.5)] pointer-events-none filter select-none">😎</div>
+        <div class="absolute bottom-10 left-10 text-[80px] md:text-[120px] z-0 animate-float-complex opacity-20 drop-shadow-2xl pointer-events-none filter select-none" style="animation-delay: -4s;">💸</div>
+
+        <div data-aos="zoom-in" data-aos-duration="1000" class="relative z-10">
+            <div class="inline-block bg-red-600 text-white font-black px-6 py-2 rounded-full uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(220,38,38,0.6)] mb-6 animate-pulse">
+                <span class="lang-id">⚠️ PERINGATAN: SISA 5 SLOT DISKON ⚠️</span>
+                <span class="lang-en">⚠️ WARNING: ONLY 5 DISCOUNT SLOTS LEFT ⚠️</span>
+            </div>
+            
+            <h2 class="text-5xl md:text-7xl lg:text-[4.5rem] font-black uppercase italic tracking-tighter mb-6 drop-shadow-2xl leading-[1]">
+                <span class="lang-id">Uang Bisa Dicari, <br><span class="text-neon">Momen Manggung Gagal <br class="hidden md:block">Gak Bisa Diulang.</span></span>
+                <span class="lang-en">Money comes and goes, <br><span class="text-neon">A Failed Gig <br class="hidden md:block">Cannot Be Repeated.</span></span>
+            </h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto font-medium text-lg md:text-xl lang-id">Jangan sampai besok kamu harus bayar <span class="line-through text-red-400">Rp 3.5 Juta</span> untuk aset ini. Amankan sisa slot diskonnya sekarang, file mendarat di email detik ini juga!</p>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto font-medium text-lg md:text-xl lang-en">Don't wait until tomorrow when the price returns to <span class="line-through text-red-400">$230</span>. Secure your discount slot now, files delivered to your email instantly!</p>
+            
+            <a href="#katalog" class="bg-neon-glow text-black px-12 md:px-16 py-6 md:py-8 rounded-3xl font-black text-2xl md:text-3xl transition transform hover:scale-105 inline-block shadow-[0_0_40px_rgba(16,185,129,0.5)] uppercase italic tracking-tight btn-aggressive">
+                <span class="lang-id">KLAIM DISKON SEKARANG</span><span class="lang-en">CLAIM DISCOUNT NOW</span> <i data-lucide="chevron-right" class="inline w-8 h-8 ml-2"></i>
+            </a>
+
+            <!-- PayPal / Socials -->
+            <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 relative z-20">
+                <a href="https://wa.me/" target="_blank" class="flex items-center justify-center gap-3 bg-[#003087]/20 hover:bg-[#003087]/40 border border-[#0079C1]/30 text-white px-8 py-4 rounded-xl transition shadow-lg text-xs font-bold tracking-wide w-full sm:w-auto">
+                    <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current text-[#0079C1]">
+                        <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106z"/>
+                    </svg>
+                    Int'l Payment (PayPal)? Chat WA
+                </a>
+
+                <a href="https://tiktok.com/@vjmrtim1" target="_blank" class="flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl transition shadow-lg text-xs font-bold tracking-wide w-full sm:w-auto">
+                    <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    </svg>
+                    Follow @vjmrtim1
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/10 bg-black relative z-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-green-500 rounded flex items-center justify-center font-black text-black italic text-sm">V</div>
+                <div class="text-2xl font-black tracking-tighter text-gray-500">
+                    VJMR<span class="text-white">TIM</span>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-8">
+                <a href="https://tiktok.com/@vjmrtim1" target="_blank" class="text-gray-500 hover:text-white transition flex items-center gap-2 text-[11px] uppercase font-bold tracking-widest">
+                    <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg> TikTok
+                </a>
+                <a href="https://wa.me/" target="_blank" class="text-gray-500 hover:text-green-500 transition flex items-center gap-2 text-[11px] uppercase font-bold tracking-widest">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> WA Support
+                </a>
+            </div>
+
+            <div class="text-center md:text-right">
+                <p class="text-gray-600 text-[10px] uppercase tracking-[0.2em] font-black">Official Assets Store &copy; 2026</p>
+                <p class="text-gray-700 text-[9px] uppercase tracking-widest mt-1">Sistem Otomatis Lynk.id</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        lucide.createIcons();
+
+        AOS.init({
+            duration: 900,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100
+        });
+
+        // MULTI-LANGUAGE LOGIC
+        function switchLang(lang) {
+            const body = document.body;
+            const btnId = document.getElementById('btn-lang-id');
+            const btnEn = document.getElementById('btn-lang-en');
+
+            if (lang === 'id') {
+                body.classList.add('lang-mode-id');
+                body.classList.remove('lang-mode-en');
+                btnId.className = "px-3 py-1.5 rounded-full text-black bg-green-500 transition-all";
+                btnEn.className = "px-3 py-1.5 rounded-full text-gray-500 hover:text-white transition-all";
+            } else {
+                body.classList.add('lang-mode-en');
+                body.classList.remove('lang-mode-id');
+                btnEn.className = "px-3 py-1.5 rounded-full text-black bg-green-500 transition-all";
+                btnId.className = "px-3 py-1.5 rounded-full text-gray-500 hover:text-white transition-all";
+            }
+        }
+
+        // FAQ Accordion Logic
+        function toggleAccordion(btn) {
+            const item = btn.parentElement;
+            document.querySelectorAll('.faq-item').forEach(i => {
+                if(i !== item) i.classList.remove('active');
+            });
+            item.classList.toggle('active');
+        }
+
+        // Swiper Initialization
+        const swiper = new Swiper('.catalog-swiper', {
+            slidesPerView: 1.1,
+            spaceBetween: 16,
+            grabCursor: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            breakpoints: {
+                640: { slidesPerView: 2.2, spaceBetween: 20 },
+                1024: { slidesPerView: 3.2, spaceBetween: 24 },
+                1280: { slidesPerView: 4, spaceBetween: 24 }
+            }
+        });
+
+        // Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 40) {
+                nav.style.top = '0px';
+                nav.classList.add('bg-black/95', 'shadow-2xl');
+            } else {
+                nav.style.top = '32px';
+                nav.classList.remove('bg-black/95', 'shadow-2xl');
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+```
